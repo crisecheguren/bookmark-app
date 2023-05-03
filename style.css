@@ -37,13 +37,16 @@ h1:hover {
 /* bookmarks */
 
 .container {
-  display:flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 .item {
-  background:rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: var(--border-radius);
   padding: 20px;
@@ -51,12 +54,50 @@ h1:hover {
 }
 
 .item:hover {
-  background:rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.name {
+  display: flex;
+  align-items: center;
 }
 
 a {
-  text-decoration: none;
   text-transform: lowercase;
   font-size: 20px;
   font-weight: bold;
+}
+
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.fa-times {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.name img {
+  height: 20px;
+  width: 20px;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+/* media query */
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
 }
